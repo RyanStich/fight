@@ -1,0 +1,11 @@
+Model Information:
+* title:	Voxel Man- Manequin Pose ( Rigged )
+* source:	https://sketchfab.com/3d-models/voxel-man-manequin-pose-rigged-65c4a69e169248c99c7a1b79526b065d
+* author:	VJ lucid dreams (https://sketchfab.com/vjluciddreams)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Voxel Man- Manequin Pose ( Rigged )" (https://sketchfab.com/3d-models/voxel-man-manequin-pose-rigged-65c4a69e169248c99c7a1b79526b065d) by VJ lucid dreams (https://sketchfab.com/vjluciddreams) licensed under SKETCHFAB Standard (https://sketchfab.com/licenses)
