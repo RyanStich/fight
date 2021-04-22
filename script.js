@@ -39,7 +39,7 @@ const particleTexture = textureLoader.load('img/4.png')
 
 
 const particlesGeometry = new THREE.BufferGeometry(1,32,32)
-const count =  20
+const count =  10
 
 const positions = new Float32Array(count * 3)
 
@@ -131,7 +131,40 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
  */
 const clock = new THREE.Clock()
 
+var model = new THREE.Object3D();
+
 let mixer = null
+
+gltfLoader.load(
+'/img/voxel/scene.gltf',
+(gltf) =>
+{
+    model = gltf.scene
+    model.name = 'model'
+
+     mixer = new THREE.AnimationMixer(gltf.scene)
+    const action = mixer.clipAction(gltf.animations[0])
+
+
+    action.play()
+
+    // console.log(gltf)
+    gltf.scene.position.set( 1.2, -0.8, 1.4 )
+    gltf.scene.scale.set(0.300, 0.300, 0.30)
+
+    const light = new THREE.AmbientLight( 'skyblue', 3 ); // soft white light
+    gltf.scene.rotation.y = Math.PI * 2.05
+    scene.add( light );
+    const pointLight = new THREE.PointLight('#FF69B4', 1)
+    scene.add(pointLight)
+    scene.add(model)
+
+   
+}
+)
+model = scene.getObjectByName(model.name)
+
+
 
 
 const directionalLight = new THREE.DirectionalLight('#FFB6C1', 4)
@@ -141,6 +174,7 @@ directionalLight.shadow.mapSize.set(1024, 1024)
 directionalLight.shadow.normalBias = 0.05
 directionalLight.position.set(2, -4, 3)
 scene.add(directionalLight)
+
 
 
 const tick = () =>
@@ -188,33 +222,6 @@ tick()
 }
 
 function homePage3D() {
-
-    let mixer = null
-    gltfLoader.load(
-    '/img/voxel/scene.gltf',
-    (gltf) =>
-    {
-
-         mixer = new THREE.AnimationMixer(gltf.scene)
-        const action = mixer.clipAction(gltf.animations[0])
-
-
-        action.play()
-
-        // console.log(gltf)
-        gltf.scene.position.set( 1.2, -0.8, 1.4 )
-        gltf.scene.scale.set(0.300, 0.300, 0.30)
-    
-        const light = new THREE.AmbientLight( 'skyblue', 3 ); // soft white light
-        gltf.scene.rotation.y = Math.PI * 2.05
-        scene.add( light );
-        const pointLight = new THREE.PointLight('#FF69B4', 1)
-        scene.add(pointLight)
-        scene.add(gltf.scene)
-
-       
-    }
-)
     
 }
 
